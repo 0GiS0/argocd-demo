@@ -9,6 +9,7 @@ spec:
     matchLabels:
       app: wordpress
       tier: frontend
+  replicas: 3
   strategy:
     type: Recreate
   template:
@@ -16,7 +17,7 @@ spec:
       labels:
         app: wordpress
         tier: frontend
-    spec:
+    spec:      
       containers:
         - image: wordpress:4.8-apache
           name: wordpress
